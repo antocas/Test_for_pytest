@@ -1,11 +1,10 @@
 pipeline {
-	agent any
+	agent none
 	stages {
 		stage('Build') {
 			agent {
-				docker {
-					image 'python-gcloud'
-				}
+				docker 'python-gcloud'
+				
 				steps {
 					sh 'pytest /scr'
 				}
